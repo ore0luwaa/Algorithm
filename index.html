@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function analyzeSentence(sentence) {
+    let lengthCounter = 0;
+    let wordCounter = 0;
+    let vowelCounter = 0;
+    let vowels = 'aeiouAEIOU';
+    let inWord = false;
+
+    for (let i = 0; i < sentence.length; i++) {
+        let char = sentence[i];
+
+        lengthCounter++;
+
+        if (char === ' ' || char === '.') {
+            if (inWord) {
+                wordCounter++;
+                inWord = false;
+            }
+        } else {
+            inWord = true;
+        }
+
+
+        if (vowels.includes(char)) {
+            vowelCounter++;
+        }
+    }
+
+
+    if (inWord) {
+        wordCounter++;
+    }
+
+    console.log("Length of the sentence:", lengthCounter);
+    console.log("Number of words in the sentence:", wordCounter);
+    console.log("Number of vowels in the sentence:", vowelCounter);
+}
+
+let sentence = "We are GomyCode.";
+analyzeSentence(sentence);
+
+    </script>
+</body>
+</html>
