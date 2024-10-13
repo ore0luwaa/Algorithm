@@ -7,45 +7,67 @@
 </head>
 <body>
     <script>
-        function analyzeSentence(sentence) {
-    let lengthCounter = 0;
-    let wordCounter = 0;
-    let vowelCounter = 0;
-    let vowels = 'aeiouAEIOU';
-    let inWord = false;
+//         function analyzeSentence(sentence) {
+//     let lengthCounter = 0;
+//     let wordCounter = 0;
+//     let vowelCounter = 0;
+//     let vowels = 'aeiouAEIOU';
+//     let inWord = false;
 
-    for (let i = 0; i < sentence.length; i++) {
-        let char = sentence[i];
+//     for (let i = 0; i < sentence.length; i++) {
+//         let char = sentence[i];
 
-        lengthCounter++;
+//         lengthCounter++;
 
-        if (char === ' ' || char === '.') {
-            if (inWord) {
-                wordCounter++;
-                inWord = false;
-            }
-        } else {
-            inWord = true;
+//         if (char === ' ' || char === '.') {
+//             if (inWord) {
+//                 wordCounter++;
+//                 inWord = false;
+//             }
+//         } else {
+//             inWord = true;
+//         }
+
+
+//         if (vowels.includes(char)) {
+//             vowelCounter++;
+//         }
+//     }
+
+
+//     if (inWord) {
+//         wordCounter++;
+//     }
+
+//     console.log("Length of the sentence:", lengthCounter);
+//     console.log("Number of words in the sentence:", wordCounter);
+//     console.log("Number of vowels in the sentence:", vowelCounter);
+// }
+
+// let sentence = "We are GomyCode.";
+    //analyzeSentence(sentence);
+    
+
+
+    function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let key = arr[i];
+        let j = i - 1;
+
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
         }
-
-
-        if (vowels.includes(char)) {
-            vowelCounter++;
-        }
+        arr[j + 1] = key;
     }
-
-
-    if (inWord) {
-        wordCounter++;
-    }
-
-    console.log("Length of the sentence:", lengthCounter);
-    console.log("Number of words in the sentence:", wordCounter);
-    console.log("Number of vowels in the sentence:", vowelCounter);
+    return arr;
 }
 
-let sentence = "We are GomyCode.";
-analyzeSentence(sentence);
+let array = [12, 11, 13, 5, 6];
+console.log(insertionSort(array));
+
+
+
 
     </script>
 </body>
